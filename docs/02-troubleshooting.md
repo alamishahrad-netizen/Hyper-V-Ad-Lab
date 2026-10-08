@@ -99,3 +99,15 @@ w32tm /resync
 **Fix:** Used plain `Administrator` with the DC's password instead.
 
 **Lesson:** Try the plain username before assuming the password or domain name is wrong.
+
+
+
+## 8. New user created in `ForeignSecurityPrincipals` instead of the intended OU
+
+**Symptom:** A new user account showed up under the built-in `ForeignSecurityPrincipals` container instead of the `LabUsers` OU I'd just created.
+
+**Cause:** The wrong container was selected/highlighted in the left pane when I right-clicked to create the new user.
+
+**Fix:** Deleted the misplaced account, clicked directly on `LabUsers` to select it first, then right-clicked it and chose **New > User** again.
+
+**Lesson:** Always click the target OU first to confirm it's actually selected before right-clicking to create something inside it — especially easy to mis-tap on a touchscreen.
