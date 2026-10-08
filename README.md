@@ -13,7 +13,8 @@ I built a Windows Server 2022 domain controller as a virtual machine in Hyper-V 
 | Static IP configured | Done |
 | Active Directory Domain Services + DNS (`lab.local`) | Done, `dcdiag` passes |
 | Organizational Units, users, and groups | In progress |
-| Windows 11 client joined to the domain | Planned |
+| Windows 11 client (`LAB-CLIENT01`) joined to the domain | Done |
+| Organizational Units, users, and groups | Planned |
 | Group Policy | Planned |
 | Ubuntu Server VM | Planned |
 | Network isolation (private switch or VLAN) | Planned |
@@ -31,7 +32,8 @@ flowchart LR
 ```
 
 The `LAB-External` virtual switch uses the host PC's network adapter, so the VM sits on the same `192.168.88.0/24` network as my other devices. Because the MikroTik router is connected behind the ISP's router, this network is behind two layers of NAT.
-
+| Client VM name | `LAB-CLIENT01` |
+| Client guest OS | Windows 11 Enterprise (Evaluation) |
 ## Environment
 
 | Item | Value |
@@ -52,6 +54,7 @@ The `LAB-External` virtual switch uses the host PC's network adapter, so the VM 
 ## Documentation
 
 - [Build steps](docs/01-build-steps.md): how I built the lab from an empty Hyper-V host to a healthy domain controller
+- [Lab 2: Windows client VM](docs/03-lab2-client-vm.md): building `LAB-CLIENT01` and joining it to `lab.local`
 - [Troubleshooting log](docs/02-troubleshooting.md): problems I hit, what caused them, and how I fixed them
 - [`scripts/verify-dc.ps1`](scripts/verify-dc.ps1): a PowerShell script that runs the health checks I used to verify the DC
 
