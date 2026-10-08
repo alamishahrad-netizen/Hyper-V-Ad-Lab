@@ -12,7 +12,7 @@ I built a Windows Server 2022 domain controller as a virtual machine in Hyper-V 
 | Windows Server 2022 installed | Done |
 | Static IP configured | Done |
 | Active Directory Domain Services + DNS (`lab.local`) | Done, `dcdiag` passes |
-| Organizational Units, users, and groups | In progress |
+| Organizational Units, users, and groups | Done |
 | Windows 11 client (`LAB-CLIENT01`) joined to the domain | Done |
 | Organizational Units, users, and groups | Planned |
 | Group Policy | Planned |
