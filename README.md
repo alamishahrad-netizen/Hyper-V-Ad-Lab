@@ -58,6 +58,8 @@ The `LAB-External` virtual switch uses the host PC's network adapter, so the VM 
 - [Troubleshooting log](docs/02-troubleshooting.md): problems I hit, what caused them, and how I fixed them
 - [`scripts/verify-dc.ps1`](scripts/verify-dc.ps1): a PowerShell script that runs the health checks I used to verify the DC
 
+- - [Lab 4: Rocky Linux VM](docs/05-lab4-linux-vm.md): building LAB-LINUX01 and verifying networking
+
 ## Skills practiced
 
 - Creating and managing virtual machines in Hyper-V (virtual switches, virtual disks, ISO attachment, boot order, checkpoints)
