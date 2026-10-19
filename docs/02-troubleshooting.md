@@ -111,3 +111,14 @@ w32tm /resync
 **Fix:** Deleted the misplaced account, clicked directly on `LabUsers` to select it first, then right-clicked it and chose **New > User** again.
 
 **Lesson:** Always click the target OU first to confirm it's actually selected before right-clicking to create something inside it — especially easy to mis-tap on a touchscreen.
+
+
+## 9. `hv_balloon` message and apparent freeze after Linux login
+
+**Symptom:** After entering a password at the Rocky Linux login prompt, the console printed a kernel message about the memory balloon driver ("balloon floor reached" / "request partially fulfilled") and appeared to hang before dropping back to a login prompt.
+
+**Cause:** This was a normal Hyper-V dynamic memory kernel log message, not an actual error — it just appeared mid-login and looked alarming because it interrupted the expected flow.
+
+**Fix:** Logged in again normally; the shell was responsive the whole time, it just wasn't obvious from the console output.
+
+**Lesson:** Hyper-V Linux VMs print some kernel/driver log lines to the console that look like errors but are informational. If a login attempt seems to hang, try logging in again before assuming something is broken.
