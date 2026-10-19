@@ -16,7 +16,7 @@ I built a Windows Server 2022 domain controller as a virtual machine in Hyper-V 
 | Windows 11 client (`LAB-CLIENT01`) joined to the domain | Done |
 | Organizational Units, users, and groups | Planned |
 | Group Policy | Planned |
-| Ubuntu Server VM | Planned |
+| Rocky Linux VM (`LAB-LINUX01`) | Done |
 | Network isolation (private switch or VLAN) | Planned |
 
 ## Architecture
