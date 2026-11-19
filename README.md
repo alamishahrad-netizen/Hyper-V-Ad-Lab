@@ -19,6 +19,8 @@ I built a Windows Server 2022 domain controller as a virtual machine in Hyper-V 
 | Rocky Linux VM (`LAB-LINUX01`) | Done |
 | Network isolation (private switch or VLAN) | Planned |
 
+| Home network security audit | Done |
+
 ## Architecture
 
 ```mermaid
@@ -59,6 +61,19 @@ The `LAB-External` virtual switch uses the host PC's network adapter, so the VM 
 - [`scripts/verify-dc.ps1`](scripts/verify-dc.ps1): a PowerShell script that runs the health checks I used to verify the DC
 
 - - [Lab 4: Rocky Linux VM](docs/05-lab4-linux-vm.md): building LAB-LINUX01 and verifying networking
+ 
+
+## 10. Locked out of the MikroTik admin login
+
+**Symptom:** After changing the router's admin password from the factory default, logins through the web interface and through WinBox (Neighbors, by MAC address) were rejected, including with the passwords I had written down. The router log showed the failed logins coming from my own PC (192.168.88.253), not from an outside source.
+
+**Cause:** The new password wasn't stored anywhere reliable, and none of the variants I tried matched.
+
+**Fix:** Performed a hardware reset (hold the Reset button while powering on, release at the first LED flash). The router had only a few changes beyond defaults, so little was lost. Logged in with the default password from the device sticker, set a new admin password immediately, set the Wi-Fi name and password, renamed the router identity to `LAB-RTR01`, and took a configuration backup. Credentials are now stored in FILL IN (password manager name).
+
+**Lesson:** Save a credential in a password manager the moment you set it, and keep a configuration backup so a reset is cheap. Reading the router's log was also a useful way to confirm the failed logins were mine.
+
+
 
 ## Skills practiced
 
