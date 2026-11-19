@@ -1,0 +1,1 @@
+- [Lab 5: Security audit](docs/06-lab5-security-audit.md): checking endpoint protection, router hardening, and host port exposure
