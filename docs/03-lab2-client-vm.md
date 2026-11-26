@@ -2,6 +2,8 @@
 
 **Goal:** Build a Windows 11 Enterprise client VM and join it to `lab.local`, proving the domain controller from Lab 1 can actually authenticate a second machine.
 
+> **Historical configuration note:** The DNS address `192.168.88.5` in the original setup steps refers to the domain controller's initial Lab 1 address. Lab 6 later recorded the DC at `192.168.20.5` and the client at `192.168.88.249`. Confirm current DNS and routing before changing the client configuration.
+
 ## Environment
 
 | Item | Value |
@@ -41,9 +43,7 @@ Connected to the VM before starting it (so the brief "press any key" boot prompt
 - At account setup, bypassed the forced Microsoft account using the local-account path (**"who is going to use this device"**), creating a local username and password instead.
 
 ### 6. Set DNS
-Inside the client VM: `ncpa.cpl` → Ethernet → Properties → IPv4 Properties → left the IP on DHCP, set **Preferred DNS server** to `192.168.88.5` (the DC). Verified with:
-
-
+Inside the client VM: `ncpa.cpl` → Ethernet → Properties → IPv4 Properties → left the IP on DHCP, set **Preferred DNS server** to `192.168.88.5` (the DC at the time of the original build). The command/output used for the original verification was not captured in this guide. Re-check the current DNS server and confirm `nslookup lab.local` before relying on this setting.
 ### 7. Rename the computer
 `System > Rename this PC (advanced) > Rename...`, set the computer name to `LAB-CLIENT01` to match the VM name, and chose **Restart Later** since a domain join was coming next anyway.
 
