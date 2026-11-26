@@ -29,4 +29,4 @@ Both accounts exist in `LabUsers` under `lab.local`, and `jsmith` successfully a
 ## Notes
 
 - Account names are intentionally generic (`jsmith`, `mjones`) rather than themed, to keep the documentation professional for a portfolio audience.
-- Accidentally created the first account while `ForeignSecurityPrincipals` was selected instead of `LabUsers` — deleted it and recreated it with `LabUsers` properly selected first. See [troubleshooting log](02-troubleshooting.md).
+- Accidentally created the first account while `ForeignSecurityPrincipals` was selected instead of `LabUsers` — deleted it and recreated it with `LabUsers` properly selected first. See [troubleshooting log](docs/02-troubleshooting.md).
