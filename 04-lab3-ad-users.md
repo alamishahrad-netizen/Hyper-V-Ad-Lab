@@ -15,7 +15,7 @@ Inside `LabUsers`, created two accounts:
 | John Smith | `jsmith` |
 | Maria Jones | `mjones` |
 
-For each: set a password, unchecked **User must change password at next logon**, checked **Password never expires** (simplifies testing in a lab environment).
+For each: set a password, unchecked **User must change password at next logon**, and checked **Password never expires** to simplify the original lab test. This is a lab-only convenience, not a recommended production setting. For a realistic security baseline, use a suitable password policy, require rotation only where policy calls for it, and avoid permanent passwords; disable or delete unused test accounts.
 
 ### 3. Verify domain login from the client
 On `LAB-CLIENT01`, signed out of the Administrator session, clicked **Other user**, and signed in as `LAB\jsmith` with the password set above.
@@ -28,5 +28,7 @@ Both accounts exist in `LabUsers` under `lab.local`, and `jsmith` successfully a
 
 ## Notes
 
+- The test accounts are demonstration identities only. Do not publish their passwords or reuse credentials from personal or production accounts.
+- The original test-user configuration allowed passwords never to expire for convenience. Review and harden this before using the lab as a production-like security demonstration.
 - Account names are intentionally generic (`jsmith`, `mjones`) rather than themed, to keep the documentation professional for a portfolio audience.
 - Accidentally created the first account while `ForeignSecurityPrincipals` was selected instead of `LabUsers` — deleted it and recreated it with `LabUsers` properly selected first. See [troubleshooting log](docs/02-troubleshooting.md).
