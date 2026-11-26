@@ -9,7 +9,7 @@ Lab 6 brings the existing Windows Server domain controller, Windows client, and 
 
 ## VM inventory
 
-The user confirmed that all three virtual machines were running in Hyper-V at the time of closeout.
+The operator confirmed that all three virtual machines were running in Hyper-V at the time of closeout.
 
 | VM | Role | Address recorded during Lab 6 |
 |---|---|---|
@@ -22,13 +22,11 @@ The Lab 6 notes also record the MikroTik/lab gateway as `192.168.20.1`. The clie
 ## Verified results
 
 - All three VMs were confirmed running by the operator.
-- From `LAB-CLIENT01`, connectivity to `LAB-DC01` was tested successfully.
-- The domain-controller discovery command `nltest /dsgetdc:lab.local` returned successfully from the Windows client.
-- `gpupdate /force` was previously confirmed successful on the client.
+- Connectivity from the Windows client to the domain controller was tested successfully.
 - From `LAB-LINUX01`, connectivity tests to the domain controller and the router were successful.
 - The Linux network interface was reported as up.
 
-These are point-in-time test results. Repeat the checks after network, firewall, VM, or router changes.
+These are point-in-time test results. Repeat the checks after network, firewall, VM, or router changes. The commands below are a recommended repeatable verification set; do not treat them as completed results until run and recorded.
 
 ## Suggested repeatable verification commands
 
@@ -78,7 +76,7 @@ Never commit passwords, recovery keys, license keys, private keys, VPN profiles,
 
 ## Lab 6 closeout status
 
-**Operational checks:** Core VM-running and selected connectivity/domain checks confirmed.  
+**Operational checks:** All three VMs running and selected connectivity checks confirmed.  
 **Documentation:** This Lab 6 record added to the repository.  
 **Backup/checkpoint preservation:** Pending explicit verification.  
 **Final closeout:** Do not mark fully closed until the network mapping and backup/checkpoint checks above are completed.
