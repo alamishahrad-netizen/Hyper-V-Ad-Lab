@@ -29,11 +29,14 @@ flowchart LR
     ISPRouter --> MikroTik["MikroTik router/firewall<br/>192.168.88.1"]
     MikroTik --> Host
     subgraph Host["Windows PC (Hyper-V host)"]
-        Switch["LAB-External<br/>virtual switch"] --> DC["LAB-DC01<br/>Windows Server 2022<br/>AD DS + DNS<br/>192.168.88.5"]
+        Switch["LAB-External<br/>virtual switch"] --> DC["LAB-DC01<br/>Windows Server 2022<br/>AD DS + DNS<br/>192.168.20.5"]
     end
 ```
 
-The `LAB-External` virtual switch uses the host PC's network adapter, so the VM sits on the same `192.168.88.0/24` network as my other devices. Because the MikroTik router is connected behind the ISP's router, this network is behind two layers of NAT.
+The `LAB-External` virtual switch uses the host PC's network adapter. Lab 6 records the domain controller and Linux VM on `192.168.20.0/24`, while the Windows client is recorded on `192.168.88.0/24`. See [Lab 6 integrated verification](docs/06-lab6-integrated-verification.md) for recorded addresses, connectivity tests, and outstanding topology checks. Do not assume these are one flat subnet.
+
+| Client setting | Value |
+|---|---|
 | Client VM name | `LAB-CLIENT01` |
 | Client guest OS | Windows 11 Enterprise (Evaluation) |
 ## Environment
@@ -48,9 +51,9 @@ The `LAB-External` virtual switch uses the host PC's network adapter, so the VM 
 | Virtual disk | 80 GB, dynamically expanding VHDX |
 | Guest OS | Windows Server 2022 Standard Evaluation (Desktop Experience) |
 | Domain | `lab.local` (NetBIOS name `LAB`) |
-| DC IP address | `192.168.88.5/24` |
-| Default gateway | `192.168.88.1` |
-| DNS server on the DC | `192.168.88.5` (itself) |
+| DC IP address (Lab 6 record) | `192.168.20.5` |
+| Lab 6 gateway recorded for Linux/DC network | `192.168.20.1` (confirm interface and route mapping) |
+| DNS server on the DC | `192.168.20.5` (itself; verify live configuration) |
 | Virtual switch | `LAB-External` (external) |
 
 ## Documentation
@@ -59,8 +62,8 @@ The `LAB-External` virtual switch uses the host PC's network adapter, so the VM 
 - [Lab 2: Windows client VM](docs/03-lab2-client-vm.md): building `LAB-CLIENT01` and joining it to `lab.local`
 - [Troubleshooting log](docs/02-troubleshooting.md): problems I hit, what caused them, and how I fixed them
 - [`scripts/verify-dc.ps1`](scripts/verify-dc.ps1): a PowerShell script that runs the health checks I used to verify the DC
-
-- - [Lab 4: Rocky Linux VM](docs/05-lab4-linux-vm.md): building LAB-LINUX01 and verifying networking
+- [Lab 4: Rocky Linux VM](docs/05-lab4-linux-vm.md): building `LAB-LINUX01` and verifying networking
+- [Lab 6: Integrated verification and closeout](docs/06-lab6-integrated-verification.md): current three-VM inventory, recorded network tests, and remaining closeout checks
  
 
 ## 10. Locked out of the MikroTik admin login
