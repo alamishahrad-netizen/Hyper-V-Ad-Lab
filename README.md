@@ -41,7 +41,7 @@ See [Lab 5](docs/06-lab5-security-audit.md) and [Lab 6](docs/06-lab6-integrated-
 - [Lab 3 — Active Directory users and groups](04-lab3-ad-users.md)
 - [Lab 4 — Rocky Linux VM](docs/05-lab4-linux-vm.md)
 - [Lab 5 — Router and home-lab security audit](docs/06-lab5-security-audit.md)
-- [Lab 6 — Integrated verification and closeout](docs/06-lab6-integrated-verification.md)
+- [Lab 6 — Integrated verification and closeout](docs/06-lab6-integrated-verification.md)\n- [Repository audit — documentation and evidence review](docs/09-repository-audit.md)
 
 ## Environment
 
@@ -81,6 +81,6 @@ Do not publish router exports, credentials, recovery keys, license keys, private
 - Make router and firewall changes incrementally, with a recovery path.
 - Keep secrets and sensitive configuration out of this public repository.
 
-## Project boundary
+## Documentation review\n\nA repository-wide review of the Markdown files, links, status claims, and evidence gaps is available in [the repository audit](docs/09-repository-audit.md).\n\n## Project boundary
 
 Lab 6 closeout is limited to verifying the existing lab, correcting documentation, and preserving recovery points. HUMAN SHIELD, NEURO SHIELD, and EEDI are reserved for a separate Lab 7 after the planned break; they are not implemented by this repository update.
