@@ -64,8 +64,8 @@ That computer object appearing in AD is the proof the domain join worked end-to-
 
 `LAB-CLIENT01` is domain-joined to `lab.local` and authenticates against `LAB-DC01`. Lab 2 complete.
 
-## Next
+## Subsequent lab phases
 
-- Create an `LabUsers` OU and real test user accounts on `LAB-DC01`, and sign into `LAB-CLIENT01` as a standard user (not the domain Administrator) to prove normal account authentication.
-- Lab 3: stand up a Linux VM.
+- [Lab 3: Active Directory users and groups](../04-lab3-ad-users.md) — create test users and verify standard-user authentication.
+- [Lab 4: Rocky Linux VM](05-lab4-linux-vm.md) — add a Linux workstation to the lab.
   
