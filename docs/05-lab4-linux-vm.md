@@ -50,4 +50,21 @@ After the install finished, removed the ISO from **Settings > DVD Drive** (set t
 ### 7. First login
 First boot dropped to a plain text `lab-linux login:` prompt — expected for a minimal install with no desktop environment. Logged in with the created user account.
 
-### 8.
+### 8. Verify networking
+
+The Linux VM was later exercised during the integrated Lab 6 checks. The operator reported that the Linux network interface was up and that connectivity tests to the domain controller and router succeeded.
+
+The Lab 6 record lists `LAB-LINUX01` as `192.168.20.199` and the gateway used for those tests as `192.168.20.1`. Treat these as observed Lab 6 values, not proof that the address is statically assigned. Re-check the guest before relying on them:
+
+```bash
+hostnamectl
+ip -br address
+ip route
+ping -c 4 192.168.20.5
+ping -c 4 192.168.20.1
+```
+
+### Result
+
+Rocky Linux installed successfully and the VM was later confirmed running. Lab 6 recorded successful Linux-to-domain-controller and Linux-to-router connectivity checks. See [Lab 6 integrated verification](06-lab6-integrated-verification.md) for the wider topology and outstanding checks.
+
