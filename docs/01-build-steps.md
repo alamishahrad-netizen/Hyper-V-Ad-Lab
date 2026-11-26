@@ -2,6 +2,8 @@
 
 How I built `LAB-DC01`, a Windows Server 2022 domain controller for `lab.local`, in Hyper-V.
 
+> **Historical configuration note:** The `192.168.88.5/24` address and `192.168.88.1` gateway below describe the original build. Lab 6 later recorded `LAB-DC01` as `192.168.20.5`. Verify the live adapter configuration, routes, DNS, and router topology before reusing any address from this walkthrough.
+
 ## What you need
 
 - A Windows PC with Hyper-V enabled
@@ -45,7 +47,7 @@ In **Server Manager > Local Server**, change the computer name to `LAB-DC01` and
 ## 6. Set a static IP
 
 1. Run `ipconfig` and note the current address, subnet mask, and gateway.
-2. Check the target address is free: `ping 192.168.88.5` should return "Destination host unreachable" or time out.
+2. Check the target address is free by reviewing the router DHCP leases/reservations and existing network inventory. A failed ping alone does not prove an address is unused.
 3. Run `ncpa.cpl`, open **Ethernet > Properties > Internet Protocol Version 4 (TCP/IPv4)** and set:
 
 | Setting | Value |
