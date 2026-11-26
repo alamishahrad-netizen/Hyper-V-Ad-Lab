@@ -1,4 +1,4 @@
-# Lab 4: Rocky Linux Server VM
+# Lab 4: Rocky Linux VM
 
 **Goal:** Stand up a Linux VM in the lab, running Rocky Linux — a free, RHEL-compatible distro widely used in enterprise and government environments — and confirm it's a working node on the network.
 
