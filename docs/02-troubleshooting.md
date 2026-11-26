@@ -1,5 +1,7 @@
 # Troubleshooting Log
 
+> **Addressing note:** Some entries below describe the original Lab 1/2 network (`192.168.88.5` for the domain controller). Lab 6 records a later address of `192.168.20.5`; treat older addresses as historical and confirm the live configuration before using them.
+
 Problems I ran into while building the lab, what caused them, and how I fixed them.
 
 ## 1. VM shows "Start PXE over IPv4" or "Boot image not found"
