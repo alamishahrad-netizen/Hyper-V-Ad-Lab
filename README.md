@@ -2,22 +2,22 @@
 
 I built a Windows Server 2022 domain controller as a virtual machine in Hyper-V on my Windows PC and connected it to my home network. I'm using this lab to practice the skills entry-level IT roles ask for: Active Directory, DNS, user and group management, and troubleshooting.
 
-> Search this file for `FILL IN` and replace each placeholder with your own details before publishing.
+
 
 ## Status
 
 | Component | Status |
 |---|---|
-| Hyper-V VM (`LAB-DC01`) | Done |
+| Hyper-V VM (`LAB-DC01`) | Built; running during Lab 6 check |
 | Windows Server 2022 installed | Done |
-| Static IP configured | Done |
-| Active Directory Domain Services + DNS (`lab.local`) | Done, `dcdiag` passes |
+| Static IP configured | Configured historically; verify current address and prefix |
+| Active Directory Domain Services + DNS (`lab.local`) | Installed; prior `dcdiag` pass documented; rerun for current health |
 | Organizational Units, users, and groups | Done |
-| Windows 11 client (`LAB-CLIENT01`) joined to the domain | Done |
-| Organizational Units, users, and groups | Planned |
+| Windows 11 client (`LAB-CLIENT01`) joined to the domain | Done; running during Lab 6 check |
 | Group Policy | Planned |
-| Rocky Linux VM (`LAB-LINUX01`) | Done |
-| Network isolation (private switch or VLAN) | Planned |
+| Group Policy | Planned |
+| Rocky Linux VM (`LAB-LINUX01`) | Installed; running during Lab 6 check |
+| Lab 5 router/security audit | Preparation documented; audit findings and changes pending |\n| Lab 6 integrated verification | Selected connectivity checks recorded; topology and backup checks pending |\n| Network isolation (private switch or VLAN) | Planned |
 
 | Home network security audit | Done |
 
@@ -51,7 +51,7 @@ The `LAB-External` virtual switch uses the host PC's network adapter. Lab 6 reco
 | Virtual disk | 80 GB, dynamically expanding VHDX |
 | Guest OS | Windows Server 2022 Standard Evaluation (Desktop Experience) |
 | Domain | `lab.local` (NetBIOS name `LAB`) |
-| DC IP address (Lab 6 record) | `192.168.20.5` |
+| DC IP address (Lab 6 record) | `192.168.20.5` (verify live) |
 | Lab 6 gateway recorded for Linux/DC network | `192.168.20.1` (confirm interface and route mapping) |
 | DNS server on the DC | `192.168.20.5` (itself; verify live configuration) |
 | Virtual switch | `LAB-External` (external) |
@@ -72,7 +72,7 @@ The `LAB-External` virtual switch uses the host PC's network adapter. Lab 6 reco
 
 **Cause:** The new password wasn't stored anywhere reliable, and none of the variants I tried matched.
 
-**Fix:** Performed a hardware reset (hold the Reset button while powering on, release at the first LED flash). The router had only a few changes beyond defaults, so little was lost. Logged in with the default password from the device sticker, set a new admin password immediately, set the Wi-Fi name and password, renamed the router identity to `LAB-RTR01`, and took a configuration backup. Credentials are now stored in FILL IN (password manager name).
+**Fix:** Performed a hardware reset (hold the Reset button while powering on, release at the first LED flash). The router had only a few changes beyond defaults, so little was lost. Logged in with the default password from the device sticker, set a new admin password immediately, set the Wi-Fi name and password, renamed the router identity to `LAB-RTR01`, and took a configuration backup. Credentials are stored in a password manager.
 
 **Lesson:** Save a credential in a password manager the moment you set it, and keep a configuration backup so a reset is cheap. Reading the router's log was also a useful way to confirm the failed logins were mine.
 
